@@ -81,7 +81,7 @@
   --bs-highlight-bg: #fff4cc;
   --slate: #10233d;
   --amber: #ffb000;
-  --orange: #ff6b2c;
+  --orange: #ca410d;
   --steel: #9aa4b2;
   --ink: #111111;
   --cream: #f5f1ea;
@@ -163,7 +163,7 @@
 }
 
 .hero-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Syne', cursive;
   font-weight: 800;
   font-size: clamp(2.6rem, 4.5vw, 4rem);
   line-height: 1.05;
