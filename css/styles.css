@@ -476,7 +476,7 @@
 }
 
 .service-card {
-  background: var(--card-bg);
+  background: #fff;
   padding: 3rem;
   position: relative; overflow: hidden;
   transition: background 0.3s;
@@ -13081,7 +13081,7 @@ p {
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
   font-size: 2.5rem;
-  margin-top: -260px;
+  margin-top: -177px;
   margin-bottom: 3rem;
 }
 
@@ -13096,7 +13096,7 @@ p {
 
 @media (min-width: 768px) {
   section {
-    padding: 9rem 0;
+    padding: 6rem 0;
   }
 }
 
@@ -13413,7 +13413,7 @@ header.masthead .masthead-heading {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #ffc800;
+  background-color: #040404;
 }
 
 .timeline>li .timeline-image h4,
@@ -13444,7 +13444,7 @@ header.masthead .masthead-heading {
 }
 
 .timeline>li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 96;
 }
 
 .timeline .timeline-heading h4,
@@ -13576,9 +13576,9 @@ header.masthead .masthead-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("../assets/img/map-image.png");
+  background-image: url("../assets/img/logos/contact.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
 }
 
 section#contact .section-heading {
@@ -13639,6 +13639,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
 }
+
 
 .footer {
   text-align: center;
