@@ -86,9 +86,6 @@
   --ink: #111111;
   --cream: #f5f1ea;
   --white: #ffffff;
-
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
 }
 
 *,
@@ -165,11 +162,10 @@
 .hero-title {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(2.6rem, 4.5vw, 4rem);
+  font-size: 28px;
   line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--white);
-  margin-bottom: 1.5rem;
 }
 
 .hero-title em {
@@ -241,11 +237,53 @@
   text-transform: uppercase;
 }
 
+.hero-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: var(--cream);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--cream);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  z-index: 20;
+  animation: spin 20s linear infinite;
+}
+
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.hero-badge-inner {
+  width: 60px;
+  height: 60px;
+  background: var(--ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spinReverse 20s linear infinite;
+}
+
+@keyframes spinReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
 .hero-right {
   background: #989898;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   padding: 7rem 4rem 5rem;
   position: relative;
   overflow: hidden;
@@ -290,7 +328,7 @@
 }
 
 .hero-title-light em {
-  color: var(--orange);
+  color: #2e7cab;
 }
 
 .hero-desc-light {
@@ -332,48 +370,34 @@
   z-index: 10;
 }
 
-.hero-badge {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  background: var(--cream);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 4px solid var(--cream);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  z-index: 20;
-  animation: spin 20s linear infinite;
+.hero-title-icon {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-
-@keyframes spin {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
+/* ── HERO RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 991px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
   }
+  .hero-badge,
+  .hero-divider { display: none; }
+  .hero-left,
+  .hero-right { padding: 5rem 3rem 4rem; }
+  .hero-stats { gap: 2rem; }
 }
 
-.hero-badge-inner {
-  width: 60px;
-  height: 60px;
-  background: var(--ink);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: spinReverse 20s linear infinite;
+@media (max-width: 576px) {
+  .hero-left,
+  .hero-right { padding: 4rem 1.5rem 3rem; }
+  .hero-stats { gap: 1.2rem; flex-wrap: wrap; }
+  .hero-title-icon { width: 60px; }
+  .hero-btn,
+  .hero-btn-outline { width: 100%; justify-content: center; }
 }
-
-@keyframes spinReverse {
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
 
 /* ── MARQUEE ──────────────────────────────────────────────── */
 .marquee-strip {
@@ -1024,6 +1048,7 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  border-radius: 100px;
 }
 
 .img-thumbnail {
@@ -13391,7 +13416,7 @@ header.masthead .masthead-heading {
 
   .timeline>li {
     min-height: 100px;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
   }
 
   .timeline>li .timeline-panel {
@@ -13455,7 +13480,7 @@ header.masthead .masthead-heading {
   }
 
   .timeline>li .timeline-panel {
-    padding: 0 20px 20px 100px;
+    padding: 0 20px 20px 0;
   }
 
   .timeline>li .timeline-image {
@@ -13470,7 +13495,7 @@ header.masthead .masthead-heading {
   }
 
   .timeline>li.timeline-inverted>.timeline-panel {
-    padding: 0 100px 20px 20px;
+    padding: 0 0 20px 20px;
   }
 }
 
@@ -13497,9 +13522,9 @@ header.masthead .masthead-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("../assets/img/map-image.png");
+  background-image: url("../assets/img/logos/contact.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
 }
 
 section#contact .section-heading {
