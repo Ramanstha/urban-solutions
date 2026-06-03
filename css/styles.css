@@ -5156,33 +5156,21 @@ fieldset:disabled .btn {
 }
 
 .card {
-  --bs-card-spacer-y: 1rem;
-  --bs-card-spacer-x: 1rem;
-  --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-border-width: 1px;
-  --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: 0.375rem;
-  --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(0.375rem - 1px);
-  --bs-card-cap-padding-y: 0.5rem;
-  --bs-card-cap-padding-x: 1rem;
-  --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
-  --bs-card-cap-color: ;
-  --bs-card-height: ;
-  --bs-card-color: ;
-  --bs-card-bg: #fff;
-  --bs-card-img-overlay-padding: 1rem;
-  --bs-card-group-margin: 0.75rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  height: var(--bs-card-height);
-  word-wrap: break-word;
-  background-color: var(--bs-card-bg);
-  background-clip: border-box;
-  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-  border-radius: var(--bs-card-border-radius);
+    border: 1px solid #333;
+    /* Keeps top padding at 0 so the image stays flush with the top edge */
+    padding: 0 0 12px 0; 
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    width: 210px; /* Slightly wider to give the inner text box nice margins */          
+    min-height: 230px;      
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-align: center;     
+    z-index: 5;
+    overflow: hidden; 
 }
 
 .card>hr {
@@ -13149,10 +13137,10 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  background-image: url("../assets/img/about/about.jpeg");
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
 }
 
@@ -13174,23 +13162,26 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
+  padding-top: 20rem;
+  padding-bottom: 14.5rem;
+  padding-right: 45rem;
   }
 
   header.masthead .masthead-subheading {
-    font-size: 2.25rem;
+    font-size: 3.25rem;
     font-style: italic;
     line-height: 2.25rem;
     margin-bottom: 2rem;
   }
 
   header.masthead .masthead-heading {
-    font-size: 4.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     line-height: 4.5rem;
     margin-bottom: 4rem;
+    color: #f2be00;
   }
+
 }
 
 #portfolio .portfolio-item {
@@ -13585,6 +13576,192 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Chart Structural Rules --- */
+.org-chart {
+    text-align: center;
+}
+
+.org-chart ul {
+    padding-top: 25px;
+    position: relative;
+    display: flex;          /* CRITICAL: Forces cards into a row */
+    justify-content: center;
+}
+
+.org-chart li {
+    list-style-type: none;  /* CRITICAL: Completely removes the black bullet dots */
+    position: relative;
+    padding: 25px 6px 0 6px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+/* --- Automatic Connecting Lines --- */
+.org-chart li::before, .org-chart li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #333;
+    width: 50%;
+    height: 25px;
+}
+
+.org-chart li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #333;
+}
+
+.org-chart li:only-child::after, .org-chart li:only-child::before {
+    display: none;
+}
+
+.org-chart li:only-child { 
+    padding-top: 0;
+}
+
+.org-chart li:first-child::before, .org-chart li:last-child::after {
+    border: 0 none;
+}
+
+.org-chart li:last-child::before {
+    border-right: 2px solid #333;
+    border-radius: 0 4px 0 0;
+}
+
+.org-chart li:first-child::after {
+    border-radius: 4px 0 0 0;
+}
+
+.org-chart ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #333;
+    width: 0;
+    height: 25px;
+    transform: translateX(-50%);
+}
+
+
+
+/* Large centered photo styles */
+.card {
+    border: 1px solid #333;
+    /* CHANGE THIS: Set top padding to 0, right/left to 12px, and bottom to 12px */
+    padding: 0 12px 12px 12px; 
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    width: 200px;           
+    min-height: 210px;      
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-align: center;     
+    z-index: 5;
+    overflow: hidden; /* Keeps the photo corners rounded to match the box */
+}
+
+.card img {
+    /* CHANGE THIS: Make the image slightly wider to cleanly fill the unpadded space */
+    width: calc(100% + 24px); 
+    
+    height: 120px;          
+    object-fit: cover;
+    border: none;           
+    margin-bottom: 10px;    
+    flex-shrink: 0;
+    display: block;         
+}
+
+.card-info {
+   .card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Box Styling */
+    width: 90%;               /* Shrinks it slightly so it doesn't touch the outer card borders */
+    background-color: #f8f9fa; /* Light grey background for contrast */
+    border: 1px solid #ddd;    /* The border line around the text */
+    border-radius: 4px;        /* Slightly rounded corners for the inner box */
+    padding: 10px 6px;         /* Padding inside the text box */
+    margin-bottom: 10px;       /* Pushes the social icons down */
+}
+}
+
+.card-info h3 {
+   font-size: 0.9rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.card-info .title {
+    font-size: 0.94rem;
+    color: #555;
+    margin-bottom: 0; 
+    line-height: 1.2;
+}
+
+/* --- Social Icons Row Row styling --- */
+.card-info .social-links {
+    display: flex;
+    flex-direction: row;    /* Force items horizontally side-by-side */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;               /* Space out the circular buttons */
+    margin-top: auto;       /* Snaps icons cleanly to the bottom area of the card */
+    width: 100%;
+}
+
+/* Style adjustments for font-awesome circular badges */
+.card-info .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 28px;
+    height: 28px;
+    background-color: #212529; /* Standard dark button look to match your bootstrap classes */
+    color: #fff;
+    border-radius: 50%;        /* Makes the links perfectly circular like your reference image */
+    font-size: 0.8rem;
+    transition: background-color 0.2s ease;
+}
+
+.card-info .social-links a:hover {
+    background-color: #495057;
+}
+
+/* --- Theme Background Profiles --- */
+.theme-root > .card { background-color: #ffffff; }
+.theme-purple > .card { background-color: #ffffff; } 
+.theme-khaki > .card { background-color: #ffffff; }
+.theme-blue > .card { background-color: #ffffff; }
+.theme-grey > .card { background-color: #fffff; }
+
 
 .footer {
   text-align: center;
