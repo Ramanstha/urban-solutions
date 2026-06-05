@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <!-- Responsive & functional overrides -->
+    <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -449,8 +451,8 @@
                 <h3 class="section-subheading text-muted">Meet the team turning vision into reality.
                 </h3>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/sabin.jpg" alt="..." />
                         <h4>Sabin Shahi </h4>
@@ -464,7 +466,7 @@
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/bikash.jpg" alt="..." />
                         <h4>Bikash Shrestha</h4>
@@ -478,7 +480,7 @@
                             aria-label="Bikash Shrestha LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/raman.jpg" alt="..." />
                         <h4>Raman Shrestha</h4>
@@ -495,8 +497,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/vakso.png" alt="..." />
                         <h4>Subhash Pokharel </h4>
@@ -510,7 +512,7 @@
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/yuzesh.png" alt="..." />
                         <h4>Yuzesh Bishankhe</h4>
@@ -524,7 +526,7 @@
                             aria-label="Yuzesh Bishankhe LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/pooja.JPG" alt="..." />
                         <h4>Pooja Shrestha</h4>
@@ -553,79 +555,136 @@
     </section>
 
     <!-- Contact-->
-    <section class="page-section bg-light" id="contact">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="section-subheading text-muted">GET IN TOUCH</h1>
+    <section class="page-section" id="contact">
 
-            </div>
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- * * SB Forms Contact Form * *-->
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- This form is pre-integrated with SB Forms.-->
-            <!-- To make this form functional, sign up at-->
-            <!-- https://startbootstrap.com/solution/contact-forms-->
-            <!-- to get an API token!-->
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                <div class="row align-items-stretch mb-5">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <!-- Name input-->
-                            <input class="form-control" id="name" type="text" placeholder="Your Name *"
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+        <!-- Decorative glow orbs -->
+        <div class="contact-glow-1" aria-hidden="true"></div>
+        <div class="contact-glow-2" aria-hidden="true"></div>
+
+        <div class="container position-relative" style="z-index:2;">
+            <div class="row g-5 align-items-center">
+
+                <!-- ── LEFT: Brand info panel ── -->
+                <div class="col-lg-5 contact-info-col">
+
+                    <p class="contact-eyebrow">
+                        <span class="contact-eyebrow-dot"></span> GET IN TOUCH
+                    </p>
+
+                    <h2 class="contact-big-heading">Let's<br><span class="contact-accent">Talk.</span></h2>
+
+                    <p class="contact-lead">Have a question, a partnership idea, or just want to say hello? Drop us a message — we'd love to hear from you.</p>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="form-group">
-                            <!-- Email address input-->
-                            <input class="form-control" id="email" type="email" placeholder="Your Email *"
-                                data-sb-validations="required,email" />
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                        </div>
-                        <div class="form-group mb-md-0">
-                            <!-- Phone number input-->
-                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
-                            </div>
+                        <div>
+                            <div class="contact-info-label">Email Us</div>
+                            <a class="contact-info-value" href="mailto:uslogistics021@gmail.com">uslogistics021@gmail.</a>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-group-textarea mb-md-0">
-                            <!-- Message input-->
-                            <textarea class="form-control" id="message" placeholder="Your Message *"
-                                data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
-                            </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <div class="contact-info-label">Call Us</div>
+                            <div class="contact-info-value">(+977) 9801074948 / 9801074569</div>
                         </div>
                     </div>
-                </div>
-                <!-- Submit success message-->
-                <!---->
-                <!-- This is what your users will see when the form-->
-                <!-- has successfully submitted-->
-                <div class="d-none" id="submitSuccessMessage">
-                    <div class="text-center text-white mb-3">
-                        <div class="fw-bolder">Form submission successful!</div>
-                        To activate this form, sign up at
-                        <br />
-                        <a
-                            href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <div class="contact-info-label">Find Us</div>
+                            <div class="contact-info-value">Kathmandu, Nepal</div>
+                        </div>
                     </div>
-                </div>
-                <!-- Submit error message-->
-                <!---->
-                <!-- This is what your users will see when there is-->
-                <!-- an error submitting the form-->
-                <div class="d-none" id="submitErrorMessage">
-                    <div class="text-center text-danger mb-3">Error sending message!</div>
-                </div>
-                <!-- Submit Button-->
-                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled"
-                        id="submitButton" type="submit">Send Message</button></div>
-            </form>
-        </div>
+
+                </div><!-- /col-lg-5 -->
+
+                <!-- ── RIGHT: Glass form card ── -->
+                <div class="col-lg-7">
+                    <div class="contact-form-glass">
+
+                        <!-- Formspree: sign up at formspree.io and replace YOUR_FORM_ID -->
+                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+                            <input type="hidden" name="_subject" value="New Contact Form Submission - Urban Solutions" />
+                            <input type="hidden" name="_replyto" id="replyto" value="" />
+
+                            <div class="row g-3">
+
+                                <div class="col-sm-6">
+                                    <div class="contact-field-wrap">
+                                        <i class="fas fa-user contact-field-icon"></i>
+                                        <input class="form-control contact-field" id="name" name="name" type="text"
+                                            placeholder="Your Name" required />
+                                        <div class="invalid-feedback">A name is required.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="contact-field-wrap">
+                                        <i class="fas fa-envelope contact-field-icon"></i>
+                                        <input class="form-control contact-field" id="email" name="email" type="email"
+                                            placeholder="Your Email" required />
+                                        <div class="invalid-feedback">A valid email is required.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="contact-field-wrap">
+                                        <i class="fas fa-phone contact-field-icon"></i>
+                                        <input class="form-control contact-field" id="phone" name="phone" type="tel"
+                                            placeholder="Your Phone" required />
+                                        <div class="invalid-feedback">A phone number is required.</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="contact-field-wrap">
+                                        <i class="fas fa-comment-alt contact-field-icon contact-field-icon--top"></i>
+                                        <textarea class="form-control contact-field" id="message" name="message"
+                                            placeholder="Your Message" rows="5" required></textarea>
+                                        <div class="invalid-feedback">A message is required.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Feedback messages -->
+                                <div class="col-12">
+                                    <div class="d-none contact-feedback contact-feedback--success" id="submitSuccessMessage">
+                                        <i class="fas fa-check-circle me-2"></i> Message sent! We'll be in touch soon.
+                                    </div>
+                                    <div class="d-none contact-feedback contact-feedback--error" id="submitErrorMessage">
+                                        <i class="fas fa-exclamation-circle me-2"></i> Something went wrong. Email us at
+                                        <a href="mailto:it1.urbansolutions@gmail.com">it1.urbansolutions@gmail.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button class="contact-submit-btn" id="submitButton" type="submit">
+                                        Send Message&nbsp;&nbsp;<i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+
+                            </div><!-- /row -->
+                        </form>
+
+                    </div><!-- /contact-form-glass -->
+                </div><!-- /col-lg-7 -->
+
+            </div><!-- /row -->
+        </div><!-- /container -->
     </section>
+    <!-- Scroll-to-top button -->
+    <button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- Footer-->
     <footer class="footer py-4">
         <div class="container">
@@ -915,11 +974,79 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- Contact Form Handler (Formspree AJAX) -->
+    <script>
+        (function () {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitButton');
+            const successMsg = document.getElementById('submitSuccessMessage');
+            const errorMsg = document.getElementById('submitErrorMessage');
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                // Basic HTML5 validation
+                if (!form.checkValidity()) {
+                    form.classList.add('was-validated');
+                    return;
+                }
+
+                // Mirror email into _replyto hidden field
+                document.getElementById('replyto').value = document.getElementById('email').value;
+
+                // Disable button and show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending…';
+                successMsg.classList.add('d-none');
+                errorMsg.classList.add('d-none');
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        form.reset();
+                        form.classList.remove('was-validated');
+                        successMsg.classList.remove('d-none');
+                        submitBtn.innerHTML = '✅ Message Sent!';
+                        // Re-enable after 5 s so user can send again
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                            successMsg.classList.add('d-none');
+                        }, 5000);
+                    } else {
+                        const data = await response.json();
+                        throw new Error(data.error || 'Server error');
+                    }
+                } catch (err) {
+                    errorMsg.classList.remove('d-none');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }
+            });
+        })();
+    </script>
+
+    <!-- Scroll-to-top button logic -->
+    <script>
+        (function () {
+            const btn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
 </body>
 
 </html>
