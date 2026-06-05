@@ -94,6 +94,242 @@
   box-sizing: border-box;
 }
 
+/* TEAM SECTION - HIERARCHY */
+.chart-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.org-chart {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.org-chart ul {
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.org-chart .csr {
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.org-chart > ul > li > ul > li {
+  flex: 1;
+  min-width: 0;
+}
+
+/* First child (Raman's branch) - remove gap */
+.org-chart > ul > li > ul > li:nth-child(1) > ul {
+  gap: 2px;
+}
+
+/* Second child (Bikash's branch) - add left margin and reduce gap */
+.org-chart > ul > li > ul > li:nth-child(2) > ul {
+  margin-left: 190px;
+  gap: 160px;
+}
+
+.org-chart li {
+  position: relative;
+  padding: 20px 2px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-chart li::before,
+.org-chart li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 75%;
+  height: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.org-chart li::before {
+  right: 50%;
+}
+
+.org-chart li::after {
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+.org-chart li:only-child::before,
+.org-chart li:only-child::after {
+  display: none;
+}
+
+.org-chart li:only-child {
+  padding-top: 0;
+}
+
+.org-chart li:first-child::before,
+.org-chart li:last-child::after {
+  border: none;
+}
+
+.org-chart li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+}
+
+.org-chart li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+.org-chart ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+.org-chart ul .split::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 36%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+.org-chart .card {
+  border: 1px solid #ddd;
+  padding: 0;
+  width: 110px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.org-chart .card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+
+.org-chart .card-info {
+  padding: 6px;
+  background: #f8f9fa;
+}
+
+.org-chart .card-info h3 {
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin: 0 0 2px;
+  color: #333;
+  line-height: 1.1;
+}
+
+.org-chart .card-info .title {
+  font-size: 0.58rem;
+  color: #666;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+
+.org-chart .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.org-chart .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #212529;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.5rem;
+  text-decoration: none;
+}
+
+.org-chart .social-links a:hover {
+  background: #495057;
+}
+
+@media (min-width: 576px) {
+  .chart-container { padding: 0 15px; }
+  .org-chart .card { width: 130px; }
+  .org-chart .card img { height: 130px; }
+  .org-chart .card-info { padding: 8px; }
+  .org-chart .card-info h3 { font-size: 0.72rem; margin-bottom: 3px; }
+  .org-chart .card-info .title { font-size: 0.63rem; margin-bottom: 5px; }
+  .org-chart .social-links a { width: 19px; height: 19px; font-size: 0.58rem; }
+  .org-chart li { padding: 20px 3px 0; }
+}
+
+@media (min-width: 768px) {
+  .org-chart .card { width: 150px; }
+  .org-chart .card img { height: 150px; }
+  .org-chart .card-info { padding: 10px; }
+  .org-chart .card-info h3 { font-size: 0.78rem; margin-bottom: 4px; }
+  .org-chart .card-info .title { font-size: 0.68rem; margin-bottom: 6px; }
+  .org-chart .social-links a { width: 21px; height: 21px; font-size: 0.63rem; }
+  .org-chart li { padding: 22px 4px 0; }
+}
+
+@media (min-width: 1200px) {
+  .org-chart .card { width: 165px; border-radius: 15px; }
+  .org-chart .card img { height: 165px; }
+  .org-chart .card-info { padding: 12px; width: -webkit-fill-available; }
+  .org-chart .card-info h3 { font-size: 0.82rem; }
+  .org-chart .card-info .title { font-size: 0.72rem; margin-bottom: 8px; }
+  .org-chart .social-links a { width: 23px; height: 23px; font-size: 0.68rem; }
+  .org-chart li { padding: 25px 0px 0; }
+}
+
+@media (max-width: 575px) {
+  .org-chart ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .org-chart li::before,
+  .org-chart li::after,
+  .org-chart ul ul::before {
+    display: none;
+  }
+  .org-chart li {
+    padding: 10px 0;
+  }
+  .org-chart .card {
+    width: min(200px, 85vw);
+  }
+  .org-chart .card img {
+    height: 180px;
+  }
+}
+
 /* ── HERO ─────────────────────────────────────────────────── */
 .hero {
   min-height: 100vh;
@@ -13490,23 +13726,6 @@ header.masthead .masthead-heading {
   }
 }
 
-.team-member {
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.team-member img {
-  width: 14rem;
-  height: 14rem;
-  border: 0.5rem solid rgba(0, 0, 0, 0.1);
-}
-
-.team-member h4,
-.team-member .h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-}
-
 .img-brand {
   height: 2.75rem;
 }
@@ -13576,192 +13795,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
 }
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.chart-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* --- Chart Structural Rules --- */
-.org-chart {
-    text-align: center;
-}
-
-.org-chart ul {
-    padding-top: 25px;
-    position: relative;
-    display: flex;          /* CRITICAL: Forces cards into a row */
-    justify-content: center;
-}
-
-.org-chart li {
-    list-style-type: none;  /* CRITICAL: Completely removes the black bullet dots */
-    position: relative;
-    padding: 22px 10px 0 0px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center
-}
-
-/* --- Automatic Connecting Lines --- */
-.org-chart li::before, .org-chart li::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 50%;
-    border-top: 2px solid #333;
-    width: 50%;
-    height: 25px;
-}
-
-.org-chart li::after {
-    right: auto;
-    left: 50%;
-    border-left: 2px solid #333;
-}
-
-.org-chart li:only-child::after, .org-chart li:only-child::before {
-    display: none;
-}
-
-.org-chart li:only-child { 
-    padding-top: 0;
-}
-
-.org-chart li:first-child::before, .org-chart li:last-child::after {
-    border: 0 none;
-}
-
-.org-chart li:last-child::before {
-    border-right: 2px solid #333;
-    border-radius: 0 4px 0 0;
-}
-
-.org-chart li:first-child::after {
-    border-radius: 4px 0 0 0;
-}
-
-.org-chart ul ul::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    border-left: 2px solid #333;
-    width: 0;
-    height: 25px;
-    transform: translateX(-50%);
-}
-
-
-
-/* Large centered photo styles */
-.card {
-    border: 1px solid #333;
-    /* CHANGE THIS: Set top padding to 0, right/left to 12px, and bottom to 12px */
-    padding: 0 12px 12px 12px; 
-    
-    display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    width: 200px;           
-    min-height: 210px;      
-    background: #fff;
-    border-radius: 40px;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    text-align: center;     
-    z-index: 5;
-    overflow: hidden; /* Keeps the photo corners rounded to match the box */
-}
-
-.card img {
-    /* CHANGE THIS: Make the image slightly wider to cleanly fill the unpadded space */
-    width: calc(100% + 24px); 
-    
-    height: 185px;          
-    object-fit: cover;
-    border: none;           
-    margin-bottom: 10px;    
-    flex-shrink: 0;
-    display: block;         
-}
-
-.card-info {
-   .card-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    /* Box Styling */
-    width: 90%;               /* Shrinks it slightly so it doesn't touch the outer card borders */
-    background-color: #f8f9fa; /* Light grey background for contrast */
-    border: 1px solid #ddd;    /* The border line around the text */
-    border-radius: 4px;        /* Slightly rounded corners for the inner box */
-    padding: 10px 6px;         /* Padding inside the text box */
-    margin-bottom: 10px;       /* Pushes the social icons down */
-}
-}
-
-.card-info h3 {
-   font-size: 0.9rem;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 4px;
-    line-height: 1.2;
-}
-
-.card-info .title {
-    font-size: 0.94rem;
-    color: #555;
-    margin-bottom: 0; 
-    line-height: 1.2;
-}
-
-/* --- Social Icons Row Row styling --- */
-.card-info .social-links {
-    display: flex;
-    flex-direction: row;    /* Force items horizontally side-by-side */
-    justify-content: center;
-    align-items: center;
-    gap: 8px;               /* Space out the circular buttons */
-    margin-top: auto;       /* Snaps icons cleanly to the bottom area of the card */
-    width: 100%;
-}
-
-/* Style adjustments for font-awesome circular badges */
-.card-info .social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    width: 28px;
-    height: 28px;
-    background-color: #212529; /* Standard dark button look to match your bootstrap classes */
-    color: #fff;
-    border-radius: 50%;        /* Makes the links perfectly circular like your reference image */
-    font-size: 0.8rem;
-    transition: background-color 0.2s ease;
-}
-
-.card-info .social-links a:hover {
-    background-color: #495057;
-}
-
-/* --- Theme Background Profiles --- */
-.theme-root > .card { background-color: #ffffff; }
-.theme-purple > .card { background-color: #ffffff; } 
-.theme-khaki > .card { background-color: #ffffff; }
-.theme-blue > .card { background-color: #ffffff; }
-.theme-grey > .card { background-color: #fffff; }
-
 
 .footer {
   text-align: center;
