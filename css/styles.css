@@ -109,7 +109,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 7rem 4rem 5rem;
+  padding: 12rem 4rem 9rem;
   position: relative;
   overflow: hidden;
   animation: fadeLeft 1s 0.3s ease both;
@@ -284,7 +284,7 @@
   background: #989898;
   display: flex;
   flex-direction: column;
-  padding: 7rem 4rem 5rem;
+  padding: 12rem 4rem 5rem;
   position: relative;
   overflow: hidden;
   animation: fadeRight 1s 0.5s ease both;
@@ -392,7 +392,7 @@
 
 @media (max-width: 576px) {
   .hero-left,
-  .hero-right { padding: 4rem 1.5rem 3rem; }
+  .hero-right { padding: 7rem 1.5rem 3rem; }
   .hero-stats { gap: 1.2rem; flex-wrap: wrap; }
   .hero-title-icon { width: 60px; }
   .hero-btn,
@@ -13605,7 +13605,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .org-chart li {
     list-style-type: none;  /* CRITICAL: Completely removes the black bullet dots */
     position: relative;
-    padding: 25px 6px 0 6px; 
+    padding: 22px 10px 0 0px; 
     display: flex;
     flex-direction: column;
     align-items: center
@@ -13674,7 +13674,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 200px;           
     min-height: 210px;      
     background: #fff;
-    border-radius: 4px;
+    border-radius: 40px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     text-align: center;     
     z-index: 5;
@@ -13685,7 +13685,7 @@ section#contact form#contactForm :-ms-input-placeholder {
     /* CHANGE THIS: Make the image slightly wider to cleanly fill the unpadded space */
     width: calc(100% + 24px); 
     
-    height: 120px;          
+    height: 185px;          
     object-fit: cover;
     border: none;           
     margin-bottom: 10px;    
