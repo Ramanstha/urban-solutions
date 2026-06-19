@@ -100,7 +100,7 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 0 10px;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   justify-content: center;
 }
@@ -108,11 +108,12 @@
 .org-chart {
   display: inline-block;
   min-width: 100%;
+  transform-origin: top center;
 }
 
 .org-chart ul {
   list-style: none;
-  padding: 20px 0 0;
+  padding: 12px 0 0;
   margin: 0;
   position: relative;
   display: flex;
@@ -122,13 +123,13 @@
 
 .org-chart .csr {
   list-style: none;
-  padding: 20px 0 0;
+  padding: 12px 0 0;
   margin: 0;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 10px;
+  gap: 4px;
 }
 
 .org-chart > ul > li > ul > li {
@@ -136,19 +137,19 @@
   min-width: 0;
 }
 
-/* First child (Raman's branch) - remove gap */
+/* First child (Raman's branch) */
 .org-chart > ul > li > ul > li:nth-child(1) > ul {
   gap: 2px;
 }
 
 /* Second child (Bikash's branch) */
 .org-chart > ul > li > ul > li:nth-child(2) > ul {
-  gap: 20px;
+  gap: 8px;
 }
 
 .org-chart li {
   position: relative;
-  padding: 20px 2px 0;
+  padding: 12px 2px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,7 +161,7 @@
   position: absolute;
   top: 0;
   width: 75%;
-  height: 20px;
+  height: 12px;
   border-top: 1px solid #ccc;
 }
 
@@ -203,7 +204,7 @@
   left: 50%;
   border-left: 1px solid #ccc;
   width: 0;
-  height: 20px;
+  height: 12px;
 }
 
 .org-chart ul .split::before {
@@ -213,7 +214,7 @@
   left: 50%;
   border-left: 1px solid #ccc;
   width: 0;
-  height: 20px;
+  height: 12px;
 }
 
 .org-chart .card {
@@ -279,33 +280,33 @@
 
 @media (min-width: 576px) {
   .chart-container { padding: 0 15px; }
-  .org-chart .card { width: 130px; }
-  .org-chart .card img { height: 130px; }
-  .org-chart .card-info { padding: 8px; }
-  .org-chart .card-info h3 { font-size: 0.72rem; margin-bottom: 3px; }
-  .org-chart .card-info .title { font-size: 0.63rem; margin-bottom: 5px; }
-  .org-chart .social-links a { width: 19px; height: 19px; font-size: 0.58rem; }
-  .org-chart li { padding: 20px 3px 0; }
+  .org-chart .card { width: 120px; }
+  .org-chart .card img { height: 120px; }
+  .org-chart .card-info { padding: 7px; }
+  .org-chart .card-info h3 { font-size: 0.68rem; margin-bottom: 2px; }
+  .org-chart .card-info .title { font-size: 0.6rem; margin-bottom: 4px; }
+  .org-chart .social-links a { width: 18px; height: 18px; font-size: 0.54rem; }
+  .org-chart li { padding: 12px 2px 0; }
 }
 
 @media (min-width: 768px) {
-  .org-chart .card { width: 150px; }
-  .org-chart .card img { height: 150px; }
-  .org-chart .card-info { padding: 10px; }
-  .org-chart .card-info h3 { font-size: 0.78rem; margin-bottom: 4px; }
-  .org-chart .card-info .title { font-size: 0.68rem; margin-bottom: 6px; }
-  .org-chart .social-links a { width: 21px; height: 21px; font-size: 0.63rem; }
-  .org-chart li { padding: 22px 4px 0; }
+  .org-chart .card { width: 135px; }
+  .org-chart .card img { height: 135px; }
+  .org-chart .card-info { padding: 8px; }
+  .org-chart .card-info h3 { font-size: 0.74rem; margin-bottom: 3px; }
+  .org-chart .card-info .title { font-size: 0.64rem; margin-bottom: 5px; }
+  .org-chart .social-links a { width: 19px; height: 19px; font-size: 0.58rem; }
+  .org-chart li { padding: 12px 3px 0; }
 }
 
 @media (min-width: 1200px) {
-  .org-chart .card { width: 165px; border-radius: 15px; }
-  .org-chart .card img { height: 165px; }
-  .org-chart .card-info { padding: 12px; width: -webkit-fill-available; }
-  .org-chart .card-info h3 { font-size: 0.82rem; }
-  .org-chart .card-info .title { font-size: 0.72rem; margin-bottom: 8px; }
-  .org-chart .social-links a { width: 23px; height: 23px; font-size: 0.68rem; }
-  .org-chart li { padding: 25px 0px 0; }
+  .org-chart .card { width: 150px; border-radius: 15px; }
+  .org-chart .card img { height: 150px; }
+  .org-chart .card-info { padding: 10px; width: -webkit-fill-available; }
+  .org-chart .card-info h3 { font-size: 0.78rem; }
+  .org-chart .card-info .title { font-size: 0.68rem; margin-bottom: 6px; }
+  .org-chart .social-links a { width: 21px; height: 21px; font-size: 0.62rem; }
+  .org-chart li { padding: 14px 2px 0; }
 }
 
 @media (max-width: 575px) {

@@ -664,7 +664,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Contact-->
     <section class="page-section" id="contact">
@@ -1140,6 +1139,36 @@
                     submitBtn.textContent = 'Send Message';
                 }
             });
+        })();
+    </script>
+
+    <!-- Org-chart auto-fit: zooms the tree so it never overflows its container -->
+    <script>
+        (function () {
+            function fitOrgChart() {
+                var container = document.querySelector('.chart-container');
+                var chart = document.querySelector('.org-chart');
+                if (!container || !chart) return;
+
+                // On mobile the layout switches to vertical; no zoom needed
+                if (window.innerWidth <= 576) {
+                    chart.style.zoom = '';
+                    return;
+                }
+
+                // Reset first so we measure the natural (unscaled) width
+                chart.style.zoom = '';
+
+                var available = container.clientWidth;
+                var natural = chart.scrollWidth;
+
+                if (natural > available) {
+                    chart.style.zoom = (available / natural).toFixed(4);
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', fitOrgChart);
+            window.addEventListener('resize', fitOrgChart);
         })();
     </script>
 

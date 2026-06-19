@@ -209,20 +209,139 @@ img {
   }
 }
 
-/* ── TEAM SECTION ────────────────────────────────────── */
-/* Ensure images never overflow their container */
-.team-member img {
-  object-fit: cover;
+/* ── TEAM SECTION (ORG CHART) ────────────────────────── */
+
+/* ── Mobile (≤576px): vertical card list with hierarchy ── */
+@media (max-width: 576px) {
+  .team-scroll-hint {
+    display: none;
+  }
+
+  .chart-container {
+    overflow-x: visible;
+    padding: 0;
+    display: block;
+  }
+
+  .org-chart {
+    min-width: 0 !important;
+    width: 100%;
+    display: block;
+  }
+
+  /* Kill all connector lines */
+  .org-chart li::before,
+  .org-chart li::after,
+  .org-chart ul ul::before,
+  .org-chart ul .split::before,
+  .org-chart .csr::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* All lists go vertical */
+  .org-chart ul,
+  .org-chart ul.split,
+  .org-chart ul.csr {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* Root ul: no indent */
+  .org-chart > ul {
+    margin: 0;
+  }
+
+  /* Level 1 li (CEO): centered, no indent */
+  .org-chart > ul > li {
+    padding: 0 0 0.75rem 0 !important;
+    margin: 0;
+    align-items: center;
+    border-left: none;
+  }
+
+  /* Level 2+ lis: left border + indent to show hierarchy */
+  .org-chart > ul > li > ul > li,
+  .org-chart > ul > li > ul > li > ul > li,
+  .org-chart > ul > li > ul > li > ul > li > ul > li,
+  .org-chart .csr > li {
+    padding: 0.4rem 0 0.4rem 0.75rem !important;
+    margin: 0 0 0 1rem;
+    border-left: 3px solid #dee2e6;
+    align-items: flex-start;
+  }
+
+  /* Deepen the indent for each nesting level */
+  .org-chart > ul > li > ul > li > ul > li {
+    margin-left: 1.5rem;
+    border-left-color: #adb5bd;
+  }
+
+  .org-chart .csr > li {
+    margin-left: 2rem;
+    border-left-color: #ced4da;
+  }
+
+  /* Cards: horizontal image+info layout */
+  .org-chart .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-direction: row !important;
+    height: auto !important;
+    overflow: hidden;
+    border-radius: 10px !important;
+  }
+
+  .org-chart .card img {
+    width: 72px !important;
+    height: 80px !important;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px !important;
+  }
+
+  .org-chart .card-info {
+    flex: 1;
+    padding: 8px 10px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .org-chart .card-info h3 {
+    font-size: 0.8rem !important;
+    margin-bottom: 2px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .org-chart .card-info .title {
+    font-size: 0.68rem !important;
+    margin-bottom: 5px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .org-chart .social-links {
+    justify-content: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .org-chart .social-links a {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.58rem !important;
+  }
 }
 
-@media (max-width: 575.98px) {
-  .team-member img {
-    width: 9rem;
-    height: 9rem;
-  }
-  .team-member h4 {
-    font-size: 1rem;
-  }
+/* Ensure images never overflow their container (legacy) */
+.team-member img {
+  object-fit: cover;
 }
 
 /* ═══════════════════════════════════════════════════════════
