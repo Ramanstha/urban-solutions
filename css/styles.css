@@ -94,6 +94,242 @@
   box-sizing: border-box;
 }
 
+/* TEAM SECTION - HIERARCHY */
+.chart-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.org-chart {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.org-chart ul {
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.org-chart .csr {
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.org-chart > ul > li > ul > li {
+  flex: 1;
+  min-width: 0;
+}
+
+/* First child (Raman's branch) - remove gap */
+.org-chart > ul > li > ul > li:nth-child(1) > ul {
+  gap: 2px;
+}
+
+/* Second child (Bikash's branch) - add left margin and reduce gap */
+.org-chart > ul > li > ul > li:nth-child(2) > ul {
+  margin-left: 190px;
+  gap: 160px;
+}
+
+.org-chart li {
+  position: relative;
+  padding: 20px 2px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-chart li::before,
+.org-chart li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 75%;
+  height: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.org-chart li::before {
+  right: 50%;
+}
+
+.org-chart li::after {
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+.org-chart li:only-child::before,
+.org-chart li:only-child::after {
+  display: none;
+}
+
+.org-chart li:only-child {
+  padding-top: 0;
+}
+
+.org-chart li:first-child::before,
+.org-chart li:last-child::after {
+  border: none;
+}
+
+.org-chart li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+}
+
+.org-chart li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+.org-chart ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+.org-chart ul .split::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 36%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+.org-chart .card {
+  border: 1px solid #ddd;
+  padding: 0;
+  width: 110px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.org-chart .card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+
+.org-chart .card-info {
+  padding: 6px;
+  background: #f8f9fa;
+}
+
+.org-chart .card-info h3 {
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin: 0 0 2px;
+  color: #333;
+  line-height: 1.1;
+}
+
+.org-chart .card-info .title {
+  font-size: 0.58rem;
+  color: #666;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+
+.org-chart .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.org-chart .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #212529;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.5rem;
+  text-decoration: none;
+}
+
+.org-chart .social-links a:hover {
+  background: #495057;
+}
+
+@media (min-width: 576px) {
+  .chart-container { padding: 0 15px; }
+  .org-chart .card { width: 130px; }
+  .org-chart .card img { height: 130px; }
+  .org-chart .card-info { padding: 8px; }
+  .org-chart .card-info h3 { font-size: 0.72rem; margin-bottom: 3px; }
+  .org-chart .card-info .title { font-size: 0.63rem; margin-bottom: 5px; }
+  .org-chart .social-links a { width: 19px; height: 19px; font-size: 0.58rem; }
+  .org-chart li { padding: 20px 3px 0; }
+}
+
+@media (min-width: 768px) {
+  .org-chart .card { width: 150px; }
+  .org-chart .card img { height: 150px; }
+  .org-chart .card-info { padding: 10px; }
+  .org-chart .card-info h3 { font-size: 0.78rem; margin-bottom: 4px; }
+  .org-chart .card-info .title { font-size: 0.68rem; margin-bottom: 6px; }
+  .org-chart .social-links a { width: 21px; height: 21px; font-size: 0.63rem; }
+  .org-chart li { padding: 22px 4px 0; }
+}
+
+@media (min-width: 1200px) {
+  .org-chart .card { width: 165px; border-radius: 15px; }
+  .org-chart .card img { height: 165px; }
+  .org-chart .card-info { padding: 12px; width: -webkit-fill-available; }
+  .org-chart .card-info h3 { font-size: 0.82rem; }
+  .org-chart .card-info .title { font-size: 0.72rem; margin-bottom: 8px; }
+  .org-chart .social-links a { width: 23px; height: 23px; font-size: 0.68rem; }
+  .org-chart li { padding: 25px 0px 0; }
+}
+
+@media (max-width: 575px) {
+  .org-chart ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .org-chart li::before,
+  .org-chart li::after,
+  .org-chart ul ul::before {
+    display: none;
+  }
+  .org-chart li {
+    padding: 10px 0;
+  }
+  .org-chart .card {
+    width: min(200px, 85vw);
+  }
+  .org-chart .card img {
+    height: 180px;
+  }
+}
+
 /* ── HERO ─────────────────────────────────────────────────── */
 .hero {
   min-height: 100vh;
@@ -109,7 +345,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 7rem 4rem 5rem;
+  padding: 12rem 4rem 9rem;
   position: relative;
   overflow: hidden;
   animation: fadeLeft 1s 0.3s ease both;
@@ -284,7 +520,7 @@
   background: #989898;
   display: flex;
   flex-direction: column;
-  padding: 7rem 4rem 5rem;
+  padding: 12rem 4rem 5rem;
   position: relative;
   overflow: hidden;
   animation: fadeRight 1s 0.5s ease both;
@@ -392,7 +628,7 @@
 
 @media (max-width: 576px) {
   .hero-left,
-  .hero-right { padding: 4rem 1.5rem 3rem; }
+  .hero-right { padding: 7rem 1.5rem 3rem; }
   .hero-stats { gap: 1.2rem; flex-wrap: wrap; }
   .hero-title-icon { width: 60px; }
   .hero-btn,
@@ -5156,33 +5392,21 @@ fieldset:disabled .btn {
 }
 
 .card {
-  --bs-card-spacer-y: 1rem;
-  --bs-card-spacer-x: 1rem;
-  --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-border-width: 1px;
-  --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: 0.375rem;
-  --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(0.375rem - 1px);
-  --bs-card-cap-padding-y: 0.5rem;
-  --bs-card-cap-padding-x: 1rem;
-  --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
-  --bs-card-cap-color: ;
-  --bs-card-height: ;
-  --bs-card-color: ;
-  --bs-card-bg: #fff;
-  --bs-card-img-overlay-padding: 1rem;
-  --bs-card-group-margin: 0.75rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  height: var(--bs-card-height);
-  word-wrap: break-word;
-  background-color: var(--bs-card-bg);
-  background-clip: border-box;
-  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-  border-radius: var(--bs-card-border-radius);
+    border: 1px solid #333;
+    /* Keeps top padding at 0 so the image stays flush with the top edge */
+    padding: 0 0 12px 0; 
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    width: 210px; /* Slightly wider to give the inner text box nice margins */          
+    min-height: 230px;      
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-align: center;     
+    z-index: 5;
+    overflow: hidden; 
 }
 
 .card>hr {
@@ -13152,7 +13376,7 @@ header.masthead {
   background-image: url("../assets/img/urban.jfif");
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
 }
 
@@ -13174,23 +13398,26 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
+  padding-top: 20rem;
+  padding-bottom: 14.5rem;
+  padding-right: 45rem;
   }
 
   header.masthead .masthead-subheading {
-    font-size: 2.25rem;
+    font-size: 3.25rem;
     font-style: italic;
     line-height: 2.25rem;
     margin-bottom: 2rem;
   }
 
   header.masthead .masthead-heading {
-    font-size: 4.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     line-height: 4.5rem;
     margin-bottom: 4rem;
+    color: #f2be00;
   }
+
 }
 
 #portfolio .portfolio-item {
@@ -13497,23 +13724,6 @@ header.masthead .masthead-heading {
   .timeline>li.timeline-inverted>.timeline-panel {
     padding: 0 0 20px 20px;
   }
-}
-
-.team-member {
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.team-member img {
-  width: 14rem;
-  height: 14rem;
-  border: 0.5rem solid rgba(0, 0, 0, 0.1);
-}
-
-.team-member h4,
-.team-member .h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 0;
 }
 
 .img-brand {
