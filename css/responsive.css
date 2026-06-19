@@ -1,0 +1,564 @@
+/* =====================================================
+   Urban Solutions — Responsive & Functional Fixes
+   responsive.css  (loaded after styles.css)
+   ===================================================== */
+
+/* ── GLOBAL ─────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+/* Brand text + logo scale down on small screens */
+@media (max-width: 991.98px) {
+  #mainNav .navbar-brand {
+    font-size: 0.9rem;
+  }
+  #mainNav .navbar-brand img {
+    height: 1.25rem;
+  }
+  #mainNav .navbar-brand span.m-3 {
+    margin-left: 0.5rem !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  #mainNav .navbar-brand span.m-3 {
+    display: none; /* hide text on tiny phones, keep logo */
+  }
+}
+
+/* ── MASTHEAD (Hero banner) ──────────────────────────── */
+@media (max-width: 767.98px) {
+  header.masthead {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+  header.masthead .masthead-subheading {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  header.masthead .masthead-heading {
+    font-size: 2.25rem;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header.masthead {
+    padding-top: 7rem;
+    padding-bottom: 3.5rem;
+  }
+  header.masthead .masthead-heading {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  .btn-xl {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ── HERO SPLIT SECTION ──────────────────────────────── */
+/* Already handled in styles.css for <992px and <576px,
+   but we add extra polish for mid-range tablets */
+@media (min-width: 577px) and (max-width: 767px) {
+  .hero-left,
+  .hero-right {
+    padding: 4rem 2rem 3rem;
+  }
+  .hero-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Prevent overflow on very small phones */
+@media (max-width: 360px) {
+  .hero-left,
+  .hero-right {
+    padding: 3.5rem 1rem 2.5rem;
+  }
+  .hero-title {
+    font-size: 1.4rem;
+  }
+  .hero-stats {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .stat-num {
+    font-size: 1.1rem;
+  }
+  .stat-label {
+    font-size: 0.6rem;
+  }
+  .hero-btn,
+  .hero-btn-outline {
+    font-size: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* ── MARQUEE ─────────────────────────────────────────── */
+@media (max-width: 400px) {
+  .marquee-item {
+    font-size: 0.65rem;
+  }
+}
+
+/* ── ABOUT / PAGE SECTIONS ───────────────────────────── */
+@media (max-width: 767.98px) {
+  .page-section {
+    padding: 4rem 0;
+  }
+  .page-section h2.section-heading {
+    font-size: 1.75rem;
+  }
+  .page-section h3.section-subheading {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ── TIMELINE ────────────────────────────────────────── */
+/* On phones the timeline stays left-aligned; fix image sizing */
+@media (max-width: 575.98px) {
+  .timeline::before {
+    left: 25px;
+  }
+  .timeline > li {
+    margin-bottom: 2rem;
+    min-height: 60px;
+  }
+  .timeline > li .timeline-image {
+    width: 55px;
+    height: 55px;
+    left: 0;
+    border-width: 4px;
+  }
+  .timeline > li .timeline-image img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .timeline > li .timeline-image h4,
+  .timeline > li .timeline-image .h4 {
+    font-size: 6px;
+    line-height: 10px;
+    margin-top: 8px;
+  }
+  .timeline > li .timeline-panel,
+  .timeline > li.timeline-inverted > .timeline-panel {
+    padding: 0 10px 10px 75px;
+    text-align: left;
+    float: right;
+    width: 100%;
+  }
+  .timeline .timeline-heading h4 {
+    font-size: 1rem;
+  }
+  .timeline .timeline-heading h4.subheading {
+    font-size: 0.9rem;
+  }
+  .timeline .timeline-body > p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ── PARTNERS (PORTFOLIO) ────────────────────────────── */
+@media (max-width: 575.98px) {
+  #portfolio .portfolio-item {
+    max-width: 100%;
+  }
+  #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
+    font-size: 1.1rem;
+  }
+}
+
+/* Portfolio modal — full-width on mobile */
+@media (max-width: 575.98px) {
+  .portfolio-modal .modal-dialog {
+    margin: 0.5rem;
+  }
+  .portfolio-modal .modal-content {
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+  }
+  .portfolio-modal .modal-content h2,
+  .portfolio-modal .modal-content .h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+  .portfolio-modal .modal-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ── TEAM SECTION ────────────────────────────────────── */
+/* Ensure images never overflow their container */
+.team-member img {
+  object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+  .team-member img {
+    width: 9rem;
+    height: 9rem;
+  }
+  .team-member h4 {
+    font-size: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTACT SECTION — Eye-catching redesign
+   ═══════════════════════════════════════════════════════════ */
+
+section#contact {
+  position: relative;
+  overflow: hidden;
+  background: #0d0f14;
+  padding: 3rem 0;
+}
+
+/* Glowing background orbs */
+.contact-glow-1,
+.contact-glow-2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  animation: orb-drift 8s ease-in-out infinite alternate;
+}
+.contact-glow-1 {
+  width: 420px;
+  height: 420px;
+  background: rgba(255, 200, 0, 0.11);
+  top: -120px;
+  left: -80px;
+  animation-delay: 0s;
+}
+.contact-glow-2 {
+  width: 520px;
+  height: 520px;
+  background: rgba(255, 200, 0, 0.06);
+  bottom: -160px;
+  right: -100px;
+  animation-delay: -4s;
+}
+@keyframes orb-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(20px, 15px) scale(1.05); }
+}
+
+/* ── Eyebrow tag ── */
+.contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #ffc800;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.contact-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffc800;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.6); opacity: 0.55; }
+}
+
+/* ── Big heading ── */
+.contact-big-heading {
+  font-family: "Syne", "Montserrat", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.0;
+  margin-bottom: 1.4rem;
+}
+.contact-accent {
+  color: #ffc800;
+  display: block;
+}
+
+/* ── Lead text ── */
+.contact-lead {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 360px;
+}
+
+/* ── Contact info items ── */
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: 1.4rem;
+}
+.contact-info-icon {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  background: rgba(255, 200, 0, 0.1);
+  border: 1px solid rgba(255, 200, 0, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffc800;
+  font-size: 1rem;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.contact-info-item:hover .contact-info-icon {
+  background: rgba(255, 200, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 200, 0, 0.2);
+}
+.contact-info-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.2rem;
+}
+.contact-info-value {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a.contact-info-value:hover {
+  color: #ffc800;
+}
+
+/* ── Glassmorphism form card ── */
+.contact-form-glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  padding: 2.75rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 200, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* ── Input fields ── */
+.contact-field-wrap {
+  position: relative;
+}
+.contact-field-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 0.82rem;
+  pointer-events: none;
+  z-index: 3;
+  transition: color 0.2s;
+}
+.contact-field-icon--top {
+  top: 1.05rem;
+  transform: none;
+}
+.contact-field {
+  background: rgba(255, 255, 255, 0.055) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  padding: 0.85rem 1rem 0.85rem 2.75rem !important;
+  font-size: 0.9rem !important;
+  font-family: "Montserrat", sans-serif !important;
+  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s !important;
+}
+.contact-field::placeholder {
+  color: rgba(255, 255, 255, 0.28) !important;
+  font-weight: 400 !important;
+}
+.contact-field:focus {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: #ffc800 !important;
+  box-shadow: 0 0 0 3px rgba(255, 200, 0, 0.14) !important;
+  outline: none !important;
+  color: #fff !important;
+}
+.contact-field-wrap:focus-within .contact-field-icon {
+  color: #ffc800;
+}
+textarea.contact-field {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* ── Submit button ── */
+.contact-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffc800;
+  color: #212529;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+  box-shadow: 0 4px 22px rgba(255, 200, 0, 0.28);
+}
+.contact-submit-btn:hover {
+  background: #e0b000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 200, 0, 0.42);
+  color: #212529;
+}
+.contact-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(255, 200, 0, 0.25);
+}
+.contact-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Feedback messages ── */
+.contact-feedback {
+  border-radius: 9px;
+  padding: 0.8rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  animation: fadeInUp 0.3s ease;
+}
+.contact-feedback--success {
+  background: rgba(25, 135, 84, 0.13);
+  border: 1px solid rgba(25, 135, 84, 0.35);
+  color: #6fcf97;
+}
+.contact-feedback--error {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  color: #f08080;
+}
+.contact-feedback--error a {
+  color: #ffc800;
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 991.98px) {
+  section#contact { padding: 5rem 0; }
+  .contact-info-col { margin-bottom: 1rem; }
+  .contact-big-heading { font-size: 3.2rem; }
+  .contact-lead { max-width: 100%; }
+}
+@media (max-width: 767.98px) {
+  section#contact { padding: 4rem 0; }
+  .contact-big-heading { font-size: 2.6rem; }
+}
+@media (max-width: 575.98px) {
+  .contact-form-glass { padding: 1.6rem; }
+  .contact-big-heading { font-size: 2.2rem; }
+  .contact-submit-btn { width: 100%; justify-content: center; }
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+.footer {
+  font-size: 0.85rem;
+}
+
+/* Center all footer columns on mobile */
+@media (max-width: 991.98px) {
+  .footer .col-lg-4 {
+    text-align: center !important;
+    margin-bottom: 0.5rem;
+  }
+  .footer .row.align-items-center {
+    gap: 0.25rem;
+  }
+}
+
+/* ── UTILITY — section top spacing ───────────────────── */
+/* mt-6 is not a Bootstrap default; override to a safe value */
+.mt-6 {
+  margin-top: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  .mt-6 {
+    margin-top: 5rem !important;
+  }
+}
+
+/* ── SCROLL-TO-TOP BUTTON ────────────────────────────── */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: #ffc800;
+  color: #212529;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-3px);
+  background: #e0b000;
+}
+
+#scrollTopBtn.visible {
+  display: flex;
+}
