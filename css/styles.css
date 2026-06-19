@@ -141,10 +141,9 @@
   gap: 2px;
 }
 
-/* Second child (Bikash's branch) - add left margin and reduce gap */
+/* Second child (Bikash's branch) */
 .org-chart > ul > li > ul > li:nth-child(2) > ul {
-  margin-left: 190px;
-  gap: 160px;
+  gap: 20px;
 }
 
 .org-chart li {
@@ -211,7 +210,7 @@
   content: '';
   position: absolute;
   top: 0;
-  left: 36%;
+  left: 50%;
   border-left: 1px solid #ccc;
   width: 0;
   height: 20px;
@@ -1284,7 +1283,7 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
-  border-radius: 100px;
+  border-radius: 50%;
 }
 
 .img-thumbnail {
@@ -13442,6 +13441,7 @@ header.masthead .masthead-heading {
   justify-content: center;
   opacity: 0;
   transition: opacity ease-in-out 0.25s;
+  border-radius: 50%;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
